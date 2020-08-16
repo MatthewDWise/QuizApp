@@ -16,9 +16,9 @@ $(".question-and-score").html(html);
 //update question choices
 function updateChoices() {
 let question = STORE.questions[STORE.currentQuestion];
-for(let i = 0; i < question.choices.length; i++) {
-$('.js-choices').append(`<input type = "radio" name = "choices" id= "choice${i+1}" value="${question.choices[i]}" tabindex = "${i+1}">
-<label for="choice${i+1}"> ${question.choices[i]} </label> <br/>
+for(let i = 0; i < question.options.length; i++) {
+$('.js-choices').append(`<input type = "radio" name = "choices" id= "option${i+1}" value="${question.options[i]}" tabindex = "${i+1}">
+<label for="choice${i+1}"> ${question.options[i]} </label> <br/>
 <span id="js-id${i+1}"></span>`
 );
 }
@@ -37,7 +37,7 @@ const questionHtml = $(`<div>
 </div>
 </div>
 
-<div class = "lookGood choices">
+<div class = "lookGood options">
 <div class = "lookGreat">
 <div class = "js-choices"> </div>
 </div>
@@ -66,7 +66,7 @@ if(!selectedChoice) {
 alert ("You must choose an option to continue");
 return;
 }
-let id_num = currentQues.choices.findIndex(i => i === selectedChoice);
+let id_num = currentQues.options.findIndex(i => i === selectedChoice);
 let id = "#js-id" + ++id_num;
 $('span').removeClass("correct-answer incorrect-answer");
 if(selectedChoice === currentQues.answer) {
