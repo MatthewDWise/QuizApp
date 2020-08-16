@@ -95,7 +95,7 @@ function displayResults() {
 
 <div class = "lookGood">
 <div class = "lookGreat">
-<button type+"button" id="restart"> Restart </button>
+<button type="button" id="restart"> Restart </button>
 </div>
 </div>
 </fieldset>
