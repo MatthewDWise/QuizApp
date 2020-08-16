@@ -40,6 +40,8 @@ const questionHtml = $(`<div>
 <div class = "lookGood choices">
 div class = "lookGreat">
 <div class = "js-choices"> </div>
+</div>
+</div>
 
 <div class ="lookGood">
 <div class = "lookGreat">
