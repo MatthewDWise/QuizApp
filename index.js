@@ -18,7 +18,7 @@ function updateChoices() {
 let question = STORE.questions[STORE.currentQuestion];
 for(let i = 0; i < question.options.length; i++) {
 $('.js-choices').append(`<input type = "radio" name = "choices" id= "option${i+1}" value="${question.options[i]}" tabindex = "${i+1}">
-<label for="choice${i+1}"> ${question.options[i]} </label> <br/>
+<label for="option${i+1}"> ${question.options[i]} </label> <br/>
 <span id="js-id${i+1}"></span>`
 );
 }
