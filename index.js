@@ -71,6 +71,59 @@ if(selectedChoice === currentQues.answer) {
 STORE.score++;
 $(`${id}`).append(`That is correct!<br/>`);
 $(`${id}`).addClass("correct-answer");
+} else {
+  $(`${id}`).append(`That is incorrect.  The correct answer is "${currentQues.answer}"<br/>`);
+  $(`${id}`).addClass("incorrect-answer");
 }
+  STORE.currentQuestion++;
+  $('#js-score').text(`Score: ${STORE.score} out of ${STORE.questions.length}`);
+  $('#answer').hide();
+  $("input[type="radio]").attr('disabled', true);
+    $('#next-question').show();
+});
+}
+
+function displayResults() {
+  let resultHtml = $( `<div class = "results"><form id= "js-start-over"><fieldset>
+<div class = "lookGood">
+<div class = "lookGreat">
+<legend> Your score is: ${STORE.score} out of ${STORE.questions.length}</legend>
+</div>
+</div>
+
+<div class = "lookGood">
+<div class = "lookGreat">
+<button type+"button" id="restart"> Restart </button>
+</div>
+</div>
+</fieldset>
+</form>
+</div>`);
+  STORE.currentQuestion = 0;
+  STORE.score = 0;
+  $("main").html(resultHtml);
+}
+
+function handleQuestions() {
+  $('body').on('click, '#next-question', (event) = > {
+               STORE.currentQuestion === STORE.questions.length?
+               displayResults() : renderQuestion();
+});
+}
+
+function startOver() {
+  $('body').on('click', '#restart', (event) => {
+    renderQuestion();
+  });
+}
+
+function pageLoad() {
+  startQuiz();
+  handleQuestions();
+  handleChoice();
+  startOver();
+}
+
+$(pageLoad);
 
 
