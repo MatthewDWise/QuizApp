@@ -107,7 +107,7 @@ function displayResults() {
 }
 
 function handleQuestions() {
-  $('body').on('click', '#next-question', (event) = > {
+  $('body').on('click', '#next-question', (event) => {
                STORE.currentQuestion === STORE.questions.length?
                displayResults() : renderQuestion();
 });
