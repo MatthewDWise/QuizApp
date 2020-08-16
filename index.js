@@ -38,7 +38,7 @@ const questionHtml = $(`<div>
 </div>
 
 <div class = "lookGood choices">
-div class = "lookGreat">
+<div class = "lookGreat">
 <div class = "js-choices"> </div>
 </div>
 </div>
