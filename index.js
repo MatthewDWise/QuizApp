@@ -6,7 +6,7 @@ renderQuestion();
 }
 
 //qustion number and score display
-function updateQeustionAndScore() {
+function updateQuestionAndScore() {
 const html = $(`<ul> <li id="js-answered">Question Number: ${STORE.currentQuestion +1} of ${STORE.questions.length}
 </li>
 </ul>`);
@@ -107,7 +107,7 @@ function displayResults() {
 }
 
 function handleQuestions() {
-  $('body').on('click, '#next-question', (event) = > {
+  $('body').on('click', '#next-question', (event) = > {
                STORE.currentQuestion === STORE.questions.length?
                displayResults() : renderQuestion();
 });
