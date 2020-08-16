@@ -80,7 +80,7 @@ $(`${id}`).addClass("correct-answer");
   STORE.currentQuestion++;
   $('#js-score').text(`Score: ${STORE.score} out of ${STORE.questions.length}`);
   $('#answer').hide();
-  $("input[type="radio]").attr('disabled', true);
+  $("input[type=radio]").attr('disabled', true);
     $('#next-question').show();
 });
 }
