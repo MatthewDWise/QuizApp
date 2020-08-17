@@ -9,6 +9,7 @@ renderQuestion();
 function updateQuestionAndScore() {
 const html = $(`<ul> <li id="js-answered">Question Number: ${STORE.currentQuestion +1} of ${STORE.questions.length}
 </li>
+<li id="js-score">Score: ${STORE.score/${STORE.questions.length}</li>
 </ul>`);
 $(".question-and-score").html(html);
 }
