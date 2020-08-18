@@ -25,7 +25,7 @@ const STORE = {
     question: "What is the Capital of California?",
     options: ["San Diego", "Los Angeles","Sacramento", "San Jose", "Bakersfield"],
     answer: "Sacramento"},
-
+/*
   {
     question: "What is the Capital of Colorado?",
     options: ["Denver", "Colorado Springs", "Grand Junction", "Alamosa", "La Junta"],
@@ -253,7 +253,7 @@ const STORE = {
 
 
 
-
+*/
 
 
 
