@@ -25,34 +25,26 @@ $('.js-choices').append(`<input type = "radio" name = "choices" id= "option${i+1
 }
 }
 
-//render question
-function renderQuestion() {
-let question = STORE.questions[STORE.currentQuestion];
-updateQuestionAndScore();
-const questionHtml = $(`<div>
-<form id="js-questions" class = "question-form">
+var questionHtml = "";
+
+function templateGeneration() {
+  let question = STORE.questions[STORE.currentQuestion];
+  questionHtml = $(`<div><form id = "js-questions" class = "question-form">
 <fieldset>
 <div class = "lookGood question">
-<div class = "lookGreat">
-<legend> ${question.question}</legend>
-</div>
-</div>
+<div class = "lookGreat"><legend>${question.question}</legend></div></div>
 
 <div class = "lookGood options">
-<div class = "lookGreat">
-<div class = "js-choices"> </div>
-</div>
-</div>
+<div class - "lookGreat">
+<div class = "js-choices"></div></div></div>
+<div class - "lookGood"><div class = "lookGreat"><button type = "submit" id = "answer" tabindex = "5">Submit</button>
+<button type = "button" id = "next-question" tabindex = "6">Next</button></div></div></fieldset></form></div>`);
+}
 
-<div class ="lookGood">
-<div class = "lookGreat">
-<button type = "submit" id = "answer" tabindex= "5"> Submit </button>
-<button type = "button" id = "next-question" tabindex = "6"> Next </button>
-</div>
-</div>
-</fieldset>
-</form>
-</div>`);
+//render question
+function renderQuestion() {
+updateQuestionAndScore();
+templateGeneration();
 $("main").html(questionHtml);
 updateChoices();
 $("#next-question").hide();
